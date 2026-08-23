@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Number Guessing Game</title>
+
+    <!-- Public papkasidagi CSS uchun boshiga / qo'shiladi -->
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+    <div class="game">
+
+        <h1>🎮 Number Guessing Game</h1>
+
+        <p>1 dan 10 gacha son toping</p>
+
+        <!-- Form ma'lumotlarni POST so'rovi orqali serverga yuboradi -->
+        <form action="/check" method="POST">
+            <input 
+                type="number" 
+                name="guess"
+                id="guess" 
+                placeholder="Son kiriting"
+                required
+            >
+
+            <button type="submit" id="checkBtn">
+                Tekshirish
+            </button>
+        </form>
+
+        <!-- Serverdan kelgan natija dinamik chiqadi -->
+        <h2 id="result"><%= message %> </h2>
+
+        <p id="attempts">Urinishlar:<%= attempts %></p>
+
+    </div>
+
+</body>
+</html>
